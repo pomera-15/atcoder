@@ -1,11 +1,4 @@
-# input 
-# 1 21
-
-# outout
-# Odd
-
-a, b = input().split(" ")
-a, b = int(a), int(b)
+a, b = map(int, input().split())
 
 if (a*b) % 2 == 0:
     print("Even")
