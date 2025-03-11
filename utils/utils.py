@@ -50,6 +50,7 @@ def sum_each_digit(n: int):
         n = int(n / 10)
     return sum
 
+
 def is_kaibun(s: str):
     """
     回文かどうかを判定する
@@ -59,3 +60,14 @@ def is_kaibun(s: str):
         if s[i] != s[-i-1]:
             return False
     return True
+
+
+def to_base_k(n:int, k:int):
+    """
+    nをk進数に変換する
+    """
+    res = ""
+    while n > 0:
+        res = str(n % k) + res
+        n = n // k
+    return int(res)
