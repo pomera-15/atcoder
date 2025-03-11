@@ -49,3 +49,13 @@ def sum_each_digit(n: int):
         sum += n % 10
         n = int(n / 10)
     return sum
+
+def is_kaibun(s: str):
+    """
+    回文かどうかを判定する
+    """
+    s = list(s)
+    for i in range(len(s)):
+        if s[i] != s[-i-1]:
+            return False
+    return True
