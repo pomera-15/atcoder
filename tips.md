@@ -55,7 +55,16 @@ alphabet = {
 ## 固定個のバケツを用意する
 ```
 # 1 - 26のバケツを用意する
-buckets = {i: None for i in range(1, 27)}
+buckets = {i: None for i in range(1, 26+1)}
+```
+
+## W✖️Hの二次元配列を用意する(Trueで埋める)
+```
+S = []
+for x in range(W):
+    S.append([])
+    for y in range(H):
+        S[x].append(True)
 ```
 
 # AGC012A: AtCoder Group Contest
