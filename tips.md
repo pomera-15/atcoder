@@ -67,6 +67,15 @@ for x in range(W):
         S[x].append(True)
 ```
 
+## 辞書の値が最大のものを求める
+```
+# max valueのkeyを取得する
+res = max(points)
+
+# max valueを取得する
+res = max(points.values())
+```
+
 # AGC012A: AtCoder Group Contest
 > 3N個の整数から3個ずつのペアを作る。  
 > このとき、ペアリングのスコアは各ペアにおける2番目に大きい数の総和とすると、総和はどのようにすれば最大化できるか。  
