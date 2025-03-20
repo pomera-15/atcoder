@@ -69,10 +69,10 @@ for x in range(W):
 
 ## 辞書の値が最大のものを求める
 ```
-# max valueのkeyを取得する
-res = max(points)
+# valueが最大となるkeyを取得する
+res = max(points, key=points.get)
 
-# max valueを取得する
+# 最大のvalueを取得する
 res = max(points.values())
 ```
 
