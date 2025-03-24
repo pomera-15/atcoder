@@ -1,48 +1,35 @@
-def w2newW(W, S):
-    """
-    wを受け取って1s後のwを返す
-    wには常に[0,0]を追加する
-    """
-    # [0,0]がない場合は追加する
-    if not([0, 0] in W):
-        W.append([0,0])
-
-    # 1s経過して煙が移動する
-    newW = []
-    for w in W:
-        if S == "N":
-            newW.append([w[0]-1, w[1]])
-        elif S == "W":
-            newW.append([w[0], w[1]-1])
-        elif S == "S":
-            newW.append([w[0]+1, w[1]])
-        elif S == "E":
-            newW.append([w[0], w[1]+1])
-
-    return newW
-
-
 N, R, C = map(int, input().split())
 S = str(input())
 
-# 高橋くんの立ち位置
-takahashi = [R, C]
+# 焚き火の初期位置
+r, c = 0, 0
 
-# もともと煙がある場所
-W = [[0, 0]]
+# 煙の初期位置
+W = set()
+W.add((0, 0))
 
 res = ""
 for s in S:
-    # 1s経過して煙が移動する
-    newW = w2newW(W, s)
-    print(W, newW)
 
-    # この時点での高橋くんの位置に煙があるかどうかをチェックする
-    if takahashi in newW:
+    print(W)
+
+    # 1s経過して焚き火、高橋くんが移動する
+    if s == "N":
+        r += 1
+    elif s == "W":
+        c += 1
+    elif s == "S":
+        r -= 1
+    elif s == "E":
+        c -= 1
+
+    # 煙が焚き火の位置に追加される
+    W.add((r, c))
+
+    # この時点での高橋くんの位置(焚き火から見た相対位置[r+R,c+C])に煙があるかどうかをチェックする
+    if (r+R,c+C) in W:
         res += "1"
     else:
         res += "0"
-    # 置き換える
-    W = newW
 
 print(res)
