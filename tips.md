@@ -80,6 +80,23 @@ res = max(points, key=points.get)
 res = max(points.values())
 ```
 
+## filter
+```
+# 文字が異なるペアだけを filter で抽出し、リストに変換してその長さを求める
+diff_count = len(list(filter(lambda pair: pair[0] != pair[1], zip(S, T))))
+
+```
+
+## 無名関数
+```
+lambda 引数: 返り値
+```
+以下と同等
+```
+def func(引数):
+    return 返り値
+```
+
 # AGC012A: AtCoder Group Contest
 > 3N個の整数から3個ずつのペアを作る。  
 > このとき、ペアリングのスコアは各ペアにおける2番目に大きい数の総和とすると、総和はどのようにすれば最大化できるか。  
