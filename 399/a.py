@@ -2,9 +2,5 @@ N = int(input())
 S = str(input())
 T = str(input())
 
-res = 0
-for s, t in zip(S, T):
-    if s != t:
-        res += 1
-
-print(res)
+diff_cnt = len(list(filter(lambda x: x[0] != x[1], zip(S, T))))
+print(diff_cnt)
